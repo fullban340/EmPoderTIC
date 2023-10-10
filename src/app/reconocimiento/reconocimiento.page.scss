@@ -1,0 +1,48 @@
+.card-locked {
+    background-color: #f0f0f0; /* Color de fondo para card bloqueado */
+    color: #777; /* Color de texto para card bloqueado */
+    border: 2px solid #ccc; /* Borde para card bloqueado */
+    opacity: 0.6; /* Opacidad para card bloqueado */
+    cursor: not-allowed; /* Cambiar el cursor para indicar que está bloqueado */
+  }
+  
+
+  /* Ejemplo de estilos CSS personalizados */
+
+  .custom-title {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+
+  .card-image {
+    max-width: 100%;
+  }
+
+
+/* Agrega más estilos personalizados según tus preferencias */
+.custom-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-col {
+  flex: 1;
+  margin: 0 5px; /* Espacio entre las columnas */
+  max-width: calc(33.333% - 10px); /* Asegura que las columnas tengan el mismo tamaño */
+}
+
+ion-modal {
+  --height: 50%;
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+ion-modal::part(backdrop) {
+  background: rgba(209, 213, 219);
+  opacity: 1;
+}
+
+ion-modal ion-toolbar {
+  --background: rgb(14 116 144);
+  --color: white;
+}
