@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Reconocimiento | EmPoderTIC</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+<!-- CARD 1 AREA LIDERAZGO -->
+  <ion-card-title>
+    Area de Participación en Talleres y eventos de Liderazgo Femenino
+  </ion-card-title>
+  <ion-card>
+    <ion-list>
+      <ion-radio-group [(ngModel)]="selectedMedal">
+        <ion-list-header>
+          Selecciona una medalla:
+        </ion-list-header>
+  
+        <ion-item *ngFor="let medal of medals">
+          <ion-label>{{ medal.title }}</ion-label>
+          <ion-radio slot="start" [value]="medal"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+  
+    <!-- Mostrar detalles de la medalla seleccionada -->
+    <ion-card *ngIf="selectedMedal">
+      <ion-card-header>
+        <ion-card-title>{{ selectedMedal.title }}</ion-card-title>
+      </ion-card-header>
+      <img alt="medalla" src="{{ selectedMedal.image }}" class="card-image" />
+      <ion-card-content>
+        {{ selectedMedal.description }}
+        <ion-button id="open-modal" expand="block">Más Información</ion-button>
+        <ion-item>
+          <ion-button expand="block" (click)="downloadFile()">{{ selectedMedal.certificado}}</ion-button>
+          <a #downloadLink style="display: none;" [href]="fileUrl" download></a>
+        </ion-item>
+
+        <ion-modal #modal trigger="open-modal">
+          <ng-template>
+            <ion-content>
+              <ion-toolbar>
+                <ion-title>Objetivos</ion-title>
+                <ion-buttons slot="end">
+                  <ion-button color="light" (click)="modal.dismiss()">Close</ion-button>
+                </ion-buttons>
+              </ion-toolbar>
+              <ion-list>
+                <ion-item>
+                  <ion-label>
+                    <a>{{ selectedMedal.modal }}</a>
+                  </ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+      </ion-card-content>
+    </ion-card>
+  </ion-card>
+  <!-- FIN CARD 1 AREA LIDERAZGO -->
+
+
+  <!-- CARD 2 -->
+
+  <!-- FIN CARD 2 -->
+</ion-content>

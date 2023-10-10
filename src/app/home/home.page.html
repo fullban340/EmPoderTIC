@@ -1,20 +1,34 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-menu side="start" contentId="main-content">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title>EmPoderTIC</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+</ion-menu>
+
+<ion-router-outlet id="main-content"></ion-router-outlet>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>EmPoderTIC - Plataforma de TIC</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="auth-form">
+  <section class="banner">
+    <img src="https://firebasestorage.googleapis.com/v0/b/empodertic.appspot.com/o/banner.png?alt=media&token=caa010bd-d73b-4df2-9db5-bb5a9267b312" alt="Banner de EmPoderTIC" />
+  </section>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="Iniciar Sesion"[routerLink]="['/login']">
+        <ion-icon name="log-in-outline"></ion-icon>
+        Iniciar Sesion
+      </ion-tab-button>
+      <ion-tab-button tab="Registro" [routerLink]="['/registration']">
+        <ion-icon name="person-add-outline"></ion-icon>
+        Registro
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-content>
